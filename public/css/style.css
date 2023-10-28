@@ -646,7 +646,7 @@ h6,
     display: block;
   }
 
-/* Services dropdown  */
+/* Services dropdown - https://moderncss.dev/pure-css-custom-checkbox-style/ */
 .dropdown-check-list .items li{
     display: flex;
     flex-direction: row;
