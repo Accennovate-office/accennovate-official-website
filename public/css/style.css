@@ -678,3 +678,56 @@ h6,
 .dropdown-check-list .items input:checked::before {
     transform: scale(1);
   }
+
+/* Contact form - time picker - https://codepen.io/danuakbar/pen/ObjXZK?editors=0010 */
+.time-picker, #time-picker1 {
+    width: 300px;
+  }
+  
+  .time-picker input.active:focus {
+    outline: none !important;
+  }
+  
+  .time-picker input.active {
+    border: 1px solid red;
+  }
+  
+  .time-picker input, #time-picker1 input {
+    display: inline;
+  }
+  
+  .time-picker, #time-picker1 {
+    position: relative;
+    display: inline;
+  }
+  
+  .suggestions, #list-suggestions1, #list2 {
+    position: absolute;
+    border: 1px solid #ddd;
+    clear: both;
+    max-height: 150px;
+    overflow-y: scroll;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  /* #list-suggestions1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 300px; 
+} */
+  
+  .suggestions li, #list-suggestions1 li, #list2 li {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px;
+  }
+  
+  .suggestions li:hover, #list-suggestions1 li:hover, #list2 li:hover {
+    background-color: #5897fb;
+    color: #fff;
+  }

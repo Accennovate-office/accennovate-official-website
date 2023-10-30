@@ -264,3 +264,163 @@ $("#inputState").change(function(){
   $("#inputDistrict").html(htmlString);
 
 });
+
+// Contact form - time picker - https://codepen.io/danuakbar/pen/ObjXZK?editors=0010
+var query = '';
+var hours = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+var hours24 = ['13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24'];
+var hoursUpdated = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+var minutes = ['00', '30'];
+var format = ['am', 'pm'];
+var time;
+var timeArray = [];
+var items = [];
+var error;
+var errorMessage;
+var list1 = $('#list-suggestions1');
+var list2 = $('#list2');
+
+itemList(this.hours, this.minutes, this.format, this.time, this.timeArray);
+
+function itemList(hours, minutes, format, time, timeArray) {
+    hours.map(i => {
+        minutes.map(j => {
+            format.map(k => {
+                time = i + ":" + j + " " + k;
+                timeArray.push(time);
+                this.timeArray = timeArray;
+            });
+        });
+    });
+}
+
+function querySubset(query) {
+    this.query = query.toLowerCase();
+    this.hour = query.substring(0, 2);
+    this.timeSelector = query.substring(2, 3);
+    this.minute = query.substring(3, 5);
+    this.formatSelector = query.substring(5, 6);
+    this.formatUpdated = query.substring(6, 8);
+}
+
+function hoursUpdate(input, inputID) {
+    if (inputID === 'hour-input1') {
+        this.hours24.map((value, i) => {
+            if (input === value) {
+                this.query = this.hoursUpdated[i];
+                $("#" + inputID).val(this.query);
+            }
+        });
+    } else if (inputID === 'hour-input2') {
+        this.hours24.map((value, i) => {
+            if (input === value) {
+                this.query = this.hoursUpdated[i];
+                $("#" + inputID).val(this.query);
+            }
+        });
+    }
+}
+
+function bindResult(inputID) {
+    if (inputID === 'hour-input1') {
+        list1.show();
+        // list2.hide();
+    } else if (inputID === 'hour-input2') {
+        list2.show();
+        // list1.hide();
+    }
+    this.error = false;
+    $('#' + inputID).removeClass('active');
+    $('.error').html('').removeClass("alert");
+
+    this.items = this.timeArray.filter(function(jam) {
+        return jam.indexOf(this.query) > -1;
+    }.bind(this));
+
+    if (inputID === 'hour-input1') {
+        list1.empty();
+        this.items.forEach(function(hour, i) {
+            var entry = document.createElement('li');
+            entry.append(document.createTextNode(hour));
+            entry.id = i;
+            entry.setAttribute("onclick", "select('" + hour + "', '" + inputID + "')");
+            list1.append(entry);
+        });
+    } else if (inputID === 'hour-input2') {
+        list2.empty();
+        this.items.forEach(function(hour, i) {
+            var entry = document.createElement('li');
+            entry.append(document.createTextNode(hour));
+            entry.id = i;
+            entry.setAttribute("onclick", "select('" + hour + "', '" + inputID + "')");
+            list2.append(entry);
+        });
+    }
+}
+
+function onErrorResult(errorMes, inputID) {
+    this.error = true;
+    this.errorMessage = errorMes;
+    $('.time-picker').attr('data-original-title', this.errorMessage);
+    $('.error').html(this.errorMessage).addClass(' alert alert-danger');
+    $('#' + inputID).addClass('active');
+}
+
+function filter(query, inputID) {
+    if (query !== "") {
+        this.querySubset(query);
+        if (!isNaN(this.hour)) {
+            this.hoursUpdate(this.hour, inputID);
+            this.bindResult(inputID);
+            if (this.timeSelector === ":") {
+                this.bindResult(inputID);
+                if (this.minute !== "") {
+                    if (!isNaN(this.minute))
+                        this.bindResult(inputID);
+                    if (this.formatSelector === " ") {
+                        this.bindResult(inputID);
+                        if (this.formatUpdated === "am" || this.formatUpdated === "pm") {
+                            this.bindResult(inputID);
+                        } else {
+                            errorMessage = "Define am/pm";
+                            this.onErrorResult(errorMessage, inputID);
+                        }
+                    } else {
+                        errorMessage = "Use space before am/pm";
+                        this.onErrorResult(errorMessage, inputID);
+                    }
+                } else {
+                    errorMessage = "Fill your minute with a number";
+                    this.onErrorResult(errorMessage, inputID);
+                }
+            } else {
+                errorMessage = "Use ' : ' between hour and minute";
+                this.onErrorResult(errorMessage, inputID);
+            }
+        } else {
+            errorMessage = "Fill your hour with a number";
+            this.onErrorResult(errorMessage, inputID);
+        }
+    } else {
+        this.error = false;
+        this.errorMessage = "";
+        $('.error').html('').removeClass("alert");
+        $('#' + inputID).removeClass('active');
+        this.items = [];
+    }
+}
+
+function select(item, inputID) {
+    if (inputID === 'hour-input1') {
+        list1.hide();
+    } else if (inputID === 'hour-input2') {
+        list2.hide();
+    }
+    this.error = false;
+    this.errorMessage = "";
+    this.query = item;
+    $("#" + inputID).val(this.query);
+    $('#' + inputID).removeClass('active');
+    $('.error').html('').removeClass("alert");
+    this.items = [];
+}

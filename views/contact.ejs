@@ -191,17 +191,7 @@
                                             <option value="">-- select one -- </option>
                                         </select>
                                         </div>
-                                    <!--   
-                                    </form>
                                     
-                                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-                                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-                                    
-                                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-                                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> -->
-
                                     <div class="col-12">
                                         <div class="form-floating w-100">
                                             <div id="list1" class="dropdown-check-list w-100" tabindex="100">
@@ -217,13 +207,69 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="message">Message</label>
+                                    <div class="container mb-4">
+                                        <div class="row form-group pb-2">
+                                            <label for="hour-input">Select preferrable time to contact</label>
+                                            <div class="error"></div>
                                         </div>
-                                    </div> -->
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                From
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div id="time-picker1" class="time-picker">
+                                                    <input id="hour-input1" class="form-control" type="text" onkeyup="filter(this.value, 'hour-input1')">
+                                                    <ul id="list-suggestions1" class="suggestions list-style-none padding-0"></ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                            <div class="col-sm-2">To</div>
+                                            <div class="col-sm-3">
+                                                <div id="time-picker2" class="time-picker">
+                                                    <input id="hour-input2" class="form-control" type="text" onkeyup="filter(this.value, 'hour-input2')">
+                                                    <ul id="list2" class="suggestions list-style-none padding-0"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="container">
+                                        <div class="row form-group">
+                                            <label for="hour-input">Select preferrable time to contact</label>
+                                            <div class="error"></div>
+                                            <div class="col-sm-2">
+                                                From &nbsp;</div>
+                                          <div class="col-sm-3">
+                                      
+                                            <div class="time-picker">
+                                              <input id="hour-input-from" class="form-control" type="text" onkeyup=filter(this.value) (focus)="suggestion = true">
+                                      
+                                              <ul id="list_from" class="suggestions list-style-none padding-0">
+                                              </ul>
+                                            </div>
+                                          </div>
+                                          <div class="col-sm-2"></div>
+                                          <div class="col-sm-2">
+                                            To &nbsp;</div>
+                                      <div class="col-sm-3">
+                                  
+                                        <div class="time-picker">
+                                          <input id="hour-input-to" class="form-control" type="text" onkeyup=filter(this.value) (focus)="suggestion = true">
+                                  
+                                          <ul id="list_to" class="suggestions list-style-none padding-0">
+                                          </ul>
+                                        </div>
+                                      </div>
+                                        </div>
+                                      </div> -->
+
+                                      <div class="row form-group">
+                                        
+                                      <!-- <div class="col-sm-8">
+                                        <div class="error"></div>
+                                      </div> -->
+                                    </div>
+                                  </div>
+
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">
                                             Send Message &nbsp;
