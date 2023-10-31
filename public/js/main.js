@@ -424,3 +424,147 @@ function select(item, inputID) {
     $('.error').html('').removeClass("alert");
     this.items = [];
 }
+
+// Contact form valiation & submission
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('form');
+  const nameInput = document.getElementById('name');
+  const phoneInput = document.getElementById('phone');
+  const whatsappInput = document.getElementById('whatsapp');
+  const emailInput = document.getElementById('email');
+  const businessNameInput = document.getElementById('business_name');
+  const inputStateSelect = document.getElementById('inputState');
+  const inputDistrictSelect = document.getElementById('inputDistrict');
+  const servicesList = document.querySelectorAll('#list1 input[type="checkbox"]');
+  const fromTimeInput = document.getElementById('hour-input1');
+  const toTimeInput = document.getElementById('hour-input2');
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    removeErrorMessages(); // Remove previous error messages
+    if (validateForm()) {
+
+      // Prepare the data for AJAX request
+      const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        whatsapp: document.getElementById('whatsapp').value,
+        email: document.getElementById('email').value,
+        businessName: document.getElementById('business_name').value,
+        state: document.getElementById('inputState').value,
+        district: document.getElementById('inputDistrict').value,
+        services: getSelectedServices(),
+        fromTime: document.getElementById('hour-input1').value,
+        toTime: document.getElementById('hour-input2').value
+      };
+    //   console.log(formData);
+      // Make an AJAX request to the backend
+      $.ajax({
+        url: '/contact',
+        method: 'post',
+        dataType: 'json',
+        data: formData,
+        success: function (response) {
+            if (response.success) {
+                console.log('Success');
+                // console.log(response.data);
+                form.reset(); // Reset the form
+            }
+          },
+          error: function (response) {
+            console.log('Error');
+            console.log(response);
+          }
+      })
+    //   fetch('/contact', {
+    //     method: 'POST',
+    //     body: formData
+    //   })
+    //   .then(response => {
+    //     if (response.ok) {
+    //       // Request was successful
+    //       alert('Form submitted successfully.');
+    //       form.reset(); // Reset the form
+    //     } else {
+    //       // Request failed
+    //       alert('Form submission failed.');
+    //     }
+    //   })
+    //   .catch(error => {
+    //     alert('An error occurred while submitting the form.');
+    //   });
+    }
+  });
+
+  function validateForm() {
+    let isValid = true;
+    if (nameInput.value.trim() === '') {
+      isValid = false;
+      displayError(nameInput, 'Name is required.');
+    }
+    if (phoneInput.value.trim() === '') {
+      isValid = false;
+      displayError(phoneInput, 'Phone is required.');
+    }
+    if (whatsappInput.value.trim() === '') {
+      isValid = false;
+      displayError(whatsappInput, 'Whatsapp is required.');
+    }
+    if (emailInput.value.trim() === '') {
+      isValid = false;
+      displayError(emailInput, 'Email is required.');
+    }
+    if (businessNameInput.value.trim() === '') {
+      isValid = false;
+      displayError(businessNameInput, 'Business Name is required.');
+    }
+    if (inputStateSelect.value === 'SelectState') {
+      isValid = false;
+      displayError(inputStateSelect, 'Please select a state.');
+    }
+    if (!Array.from(servicesList).some(input => input.checked)) {
+      isValid = false;
+      const servicesListMain = document.getElementById('list1');
+      displayError(servicesListMain, 'Select at least one service.');
+    //   displayError(servicesList[0], 'Select at least one service.');
+    }
+    if (fromTimeInput.value.trim() === '') {
+      isValid = false;
+      displayError(fromTimeInput, 'From time is required.');
+    }
+    if (toTimeInput.value.trim() === '') {
+      isValid = false;
+      displayError(toTimeInput, 'To time is required.');
+    }
+    // Add more validation as needed
+    
+    return isValid;
+  }
+
+  function displayError(element, message) {
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    errorElement.style.color = 'red';
+    element.parentNode.appendChild(errorElement);
+  }
+
+  function removeErrorMessages() {
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(message => message.remove());
+  }
+
+  function getSelectedServices() {
+    const servicesCheckboxes = document.querySelectorAll('#list1 input[type="checkbox"]');
+    const selectedServices = [];
+
+    servicesCheckboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        selectedServices.push(checkbox.value);
+      }
+    });
+
+    return selectedServices;
+  }
+});
+
