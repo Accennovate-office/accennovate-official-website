@@ -22,8 +22,8 @@ router.get('/contact', function(req, res, next) {
 
 // POST route for form submission
 router.post('/contact', async (req, res) => {
-  const enquiry = await Enquiry.create(req.body);
-    // console.log(enquiry);
+    const enquiry = await Enquiry.create(req.body);
+    console.log(enquiry);
     if (enquiry) {
         res.status(201).json({
             success: true,

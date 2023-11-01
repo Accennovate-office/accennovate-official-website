@@ -31,7 +31,7 @@
 const mongoose=require("mongoose");
 mongoose.set('strictQuery', true);
 
-const db="mongodb+srv://accennovateoffice:m9uATuSaLy6GBCnC@cms.g49104b.mongodb.net/?retryWrites=true&w=majority";
+const db="mongodb+srv://accennovateoffice:m9uATuSaLy6GBCnC@cms.g49104b.mongodb.net/acc?retryWrites=true&w=majority";
 mongoose.connect(db,{
     
     useNewUrlParser:true,
