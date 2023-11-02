@@ -453,7 +453,7 @@ document.addEventListener("DOMContentLoaded", function() {
         businessName: document.getElementById('business_name').value,
         state: document.getElementById('inputState').value,
         district: document.getElementById('inputDistrict').value,
-        services: getSelectedServices(),
+        services: getSelectedServices().toString(),
         fromTime: document.getElementById('hour-input1').value,
         toTime: document.getElementById('hour-input2').value
       };
@@ -469,6 +469,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log('Success');
                 // console.log(response.data);
                 form.reset(); // Reset the form
+                document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
             }
           },
           error: function (response) {

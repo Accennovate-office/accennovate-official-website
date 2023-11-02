@@ -8,7 +8,7 @@ const enquiry=mongoose.Schema({
     businessName:String,
     state:String,
     district:String,
-    services: Array,
+    services: String,
     fromTime: String,
     toTime: String,
     createdAt: {
