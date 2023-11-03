@@ -49,7 +49,7 @@
 // sendEmail(userEmail, 'https://mailchi.mp/03396e57ca40/thank-you-for-contacting-accennovate-tech-solutions');
 
 const mailchimpClient = require("@mailchimp/mailchimp_transactional")(
-    "fd7189dbbe6e496da8bd46707b83327d-us8"
+    "API_KEY"
   );
   
   const run = async () => {

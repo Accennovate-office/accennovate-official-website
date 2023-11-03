@@ -89,7 +89,7 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-// Mailchimp API key - fd7189dbbe6e496da8bd46707b83327d-us8
+// Mailchimp API key - f9414f854830a686385c69ca75fb0125-us8
 
 // Mailjet
 // API KEY - ca093aec139894c84633ddc35dc4e857

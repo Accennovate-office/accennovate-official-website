@@ -17,7 +17,11 @@ router.get('/', function(req, res, next) {
 // });
 
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Express' });
+  res.render('contact');
+});
+
+router.get('/service', function(req, res, next) {
+  res.render('service');
 });
 
 // POST route for form submission

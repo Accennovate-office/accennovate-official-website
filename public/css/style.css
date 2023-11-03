@@ -295,6 +295,58 @@ h6,
     background: #FFFFFF;
 }
 
+/*** Section Title copy - Card Title ***/
+.card-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.card-title span:first-child,
+.card-title span:last-child {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    width: 30px;
+    height: 2px;
+}
+
+.card-title span:last-child {
+    margin-right: 0;
+    margin-left: 30px;
+}
+
+/* .card-title span:first-child::after,
+.card-title span:last-child::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 2px;
+    top: 0;
+    right: -20px;
+} */
+
+.card-title span:last-child::after {
+    right: auto;
+    left: -20px;
+}
+
+.card-title.text-primary span:first-child,
+.card-title.text-primary span:last-child,
+.card-title.text-primary span:first-child::after,
+.card-title.text-primary span:last-child::after {
+    background: var(--primary);
+}
+
+.card-title.text-secondary span:first-child,
+.card-title.text-secondary span:last-child,
+.card-title.text-secondary span:first-child::after,
+.card-title.text-secondary span:last-child::after {
+    background: var(--secondary);
+}
+
 
 /*** Feature ***/
 .feature-item {
