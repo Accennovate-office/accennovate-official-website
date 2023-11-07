@@ -1,2 +1,6 @@
 node_modules/
 *.zip
+.env
+elasticmail.js
+mailchimp.js
+mailjet.js

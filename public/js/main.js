@@ -468,6 +468,39 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.success) {
                 console.log('Success');
                 // console.log(response.data);
+                // const apiKey = process.env.MAIL_API
+                // // const apiKey = '';
+                // const subject = 'Your Email Subject';
+                // const from = 'info@accennovate.com';
+                // const to = 'mahodar.majgaonkar@gmail.com'; // Comma-separated list of recipients
+                // const bodyHtml = '<html><body>Your HTML email content</body></html>'; // Optional
+                // // const bodyText = 'Your plain text email content'; // Optional
+                // // const isTransactional = true; // Set to true for transactional email, false for marketing
+
+                // const apiUrl = 'https://api.elasticemail.com/v2/email/send';
+
+                // $.ajax({
+                //     url: apiUrl,
+                //     type: 'POST',
+                //     data: {
+                //         apikey: apiKey,
+                //         subject: subject,
+                //         from: from,
+                //         to: to, // Comma-separated list of recipients
+                //         bodyHtml: bodyHtml, // Optional
+                //         // bodyText: bodyText, // Optional
+                //         isTransactional: true, // Set to true for transactional email, false for marketing
+                //     },
+                //     dataType: 'json',
+                //     success: function (response) {
+                //         console.log('Email sent successfully:', response);
+                //         // Handle the success response here
+                //     },
+                //     error: function (response) {
+                //         console.log('Error sending email:', response);
+                //         // Handle the error response here
+                //     }
+                // });
                 form.reset(); // Reset the form
                 document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
             }
