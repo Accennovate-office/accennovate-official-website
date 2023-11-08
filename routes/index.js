@@ -30,6 +30,10 @@ router.get('/service', function(req, res, next) {
   res.render('service');
 });
 
+router.get('/facebook', function(req, res, next) {
+  res.render('facebook_service_page');
+});
+
 // POST route for form submission
 router.post('/contact', async (req, res) => {
     const enquiry = await Enquiry.create(req.body);
