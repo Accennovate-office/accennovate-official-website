@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const bodyParser = require('body-parser');
 const Enquiry = require("../models/enquiry");
-
+require('dotenv').config();
 const axios = require('axios');
 
 const apiKey = process.env.MAIL_API; // Replace with your environment variable name
@@ -17,9 +17,10 @@ router.get('/', function(req, res, next) {
   res.render('new', { title: 'Express' });
 });
 
-// router.get('/new', function(req, res, next) {
-//   res.render('new', { title: 'Express' });
-// });
+router.get('/new', function(req, res, next) {
+  // console.log(apiKey, apiUrl);
+  res.render('index', { title: 'Express' });
+});
 
 router.get('/contact', function(req, res, next) {
   res.render('contact');
@@ -34,31 +35,65 @@ router.post('/contact', async (req, res) => {
     const enquiry = await Enquiry.create(req.body);
     // console.log(enquiry);
     if (enquiry) {
+      // console.log(process.env.MAIL_API);
+      // const emailData = {
+      //   apikey: process.env.MAIL_API,
+      //   subject: 'Confirmation: Your Message Has Been Received',
+      //   from: 'info@accennovate.com',
+      //   to: req.body.email,
+      //   bodyHtml: `
+      //   <div style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0;">
+      //       <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px;">
+      //           <div style="text-align: center;">
+      //               <img src="https://accennovate.com/img/AccennovateLogo.png" alt="Accennovate Logo" style="max-width: 150px; height: auto;">
+      //               <h1>Contact Form Submission Confirmation</h1>
+      //               <p>Thank you for contacting Accennovate Tech Solutions. We appreciate you taking the time to reach out to us.</p>
+      //           </div>
+      //           <img src="https://accennovate.com/img/about_img.png" alt="About" style="width: 100%;">
+      //           <div style="margin-top: 20px; text-align: center;">
+      //               <p>We have received your inquiry and will respond to you as soon as possible. In the meantime, you can find more information about our company and our products and services on our website at <a href="https://accennovate.com/">accennovate.com</a></p>
+      //               <p>If you have any further questions, please do not hesitate to <a href="https://accennovate.com/contact">contact us</a></p>
+      //           </div>
+      //           <div>
+      //               <br>
+      //               <p>Sincerely,</p>
+      //               <p>The Accennovate Team</p>
+      //           </div>
+      //           <div style="text-align: center;">
+      //               <img src="https://accennovate.com/img/AccennovateLogo.png" alt="Accennovate Logo" style="width: 70%; margin: 0 auto;">
+      //           </div>
+      //           <footer style="text-align: center; color: gray;"><i>Copyright (C) 2023 Accennovate Tech Solutions. All rights reserved.</i></footer>
+      //       </div>
+      //   </div>`,
+      //   // bodyText: 'Your plain text email content',
+      //   isTransactional: true,
+      // };
 
-      const emailData = {
-        apikey: apiKey,
-        subject: 'Your Email Subject',
-        from: 'info@accennovate.com',
-        to: 'recipient1@example.com,recipient2@example.com',
-        bodyHtml: '<html><body>Your HTML email content</body></html>',
-        bodyText: 'Your plain text email content',
-        isTransactional: true,
-      };
-
-      axios.post(apiUrl, emailData)
-        .then(response => {
-          console.log('Email sent successfully:', response.data);
-          // Handle the success response here
-        })
-        .catch(error => {
-          console.error('Error sending email:', error);
-          // Handle the error response here
-        });
+      // try {
+      //   const response = await axios.post(apiUrl, emailData);
+      //   console.log('Email sent successfully:', response.data);
+      //   // Handle the success response here
+      // } catch (error) {
+      //   console.error('Error sending email:', error);
+      //   // Handle the error response here
+      // }
+      
+      // axios.post(apiUrl, emailData)
+      //   .then(response => {
+      //     console.log('Email sent successfully:', response.data);
+      //     // Handle the success response here
+      //   })
+      //   .catch(error => {
+      //     console.error('Error sending email:', error);
+      //     // Handle the error response here
+      //   });
 
 
         res.status(201).json({
             success: true,
-            // data: enquiry
+            data: {
+              apiKey: process.env.MAIL_API
+            }
         });
     }else{
         res.status(201).json({
@@ -69,7 +104,7 @@ router.post('/contact', async (req, res) => {
 });
 
 router.get('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u', function(req, res, next) {
-  res.render('thank_you', { title: 'Express' });
+  res.render('thank_you', { title: 'Thank You' });
 });
 
 module.exports = router;

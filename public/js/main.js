@@ -1,3 +1,65 @@
+// Testing MAIL API
+
+// // const apiKey = process.env.MAIL_API
+// const apiKey = 'E31492B435E146532D852959BCB64A0D628D9952824F2C1EF8C96286365D9B5474D863ED8B6FE5D4D76710F53530D89D'
+// // const apiKey = '';
+// const subject = 'Confirmation: Your Message Has Been Received';
+// const from = 'info@accennovate.com';
+// const to = 'mahodar.majgaonkar@gmail.com'; // Comma-separated list of recipients
+// const bodyHtml =  `
+// <div style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0;">
+//     <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px;">
+//         <div style="text-align: center;">
+//             <img src="img/AccennovateLogo.png" alt="Accennovate Logo" style="max-width: 150px; height: auto;">
+//             <h1>Contact Form Submission Confirmation</h1>
+//             <p>Thank you for contacting Accennovate Tech Solutions. We appreciate you taking the time to reach out to us.</p>
+//         </div>
+//         <img src="img/about_img.png" alt="About" style="width: 100%;">
+//         <div style="margin-top: 20px; text-align: center;">
+//             <p>We have received your inquiry and will respond to you as soon as possible. In the meantime, you can find more information about our company and our products and services on our website at <a href="https://accennovate.com/">accennovate.com</a></p>
+//             <p>If you have any further questions, please do not hesitate to <a href="https://accennovate.com/contact">contact us</a></p>
+//         </div>
+//         <div>
+//             <br>
+//             <p>Sincerely,</p>
+//             <p>The Accennovate Team</p>
+//         </div>
+//         <div style="text-align: center;">
+//             <img src="img/AccennovateLogo.png" alt="Accennovate Logo" style="width: 70%; margin: 0 auto;">
+//         </div>
+//         <footer style="text-align: center; color: gray;"><i>Copyright (C) 2023 Accennovate Tech Solutions. All rights reserved.</i></footer>
+//     </div>
+// </div>`; // Optional
+// // const bodyText = 'Your plain text email content'; // Optional
+// // const isTransactional = true; // Set to true for transactional email, false for marketing
+
+// const apiUrl = 'https://api.elasticemail.com/v2/email/send';
+
+// $.ajax({
+//     url: apiUrl,
+//     type: 'POST',
+//     data: {
+//         apikey: apiKey,
+//         subject: subject,
+//         from: from,
+//         to: to, // Comma-separated list of recipients
+//         bodyHtml: bodyHtml, // Optional
+//         // bodyText: bodyText, // Optional
+//         isTransactional: true, // Set to true for transactional email, false for marketing
+//     },
+//     dataType: 'json',
+//     success: function (response) {
+//         console.log('Email sent successfully:', response);
+//         // Handle the success response here
+//     },
+//     error: function (response) {
+//         console.log('Error sending email:', response);
+//         // Handle the error response here
+//     }
+// });
+
+// Testing MAIL API end
+
 (function ($) {
     "use strict";
 
@@ -467,42 +529,72 @@ document.addEventListener("DOMContentLoaded", function() {
         success: function (response) {
             if (response.success) {
                 console.log('Success');
+                console.log(formData.email);
                 // console.log(response.data);
+
                 // const apiKey = process.env.MAIL_API
-                // // const apiKey = '';
-                // const subject = 'Your Email Subject';
-                // const from = 'info@accennovate.com';
-                // const to = 'mahodar.majgaonkar@gmail.com'; // Comma-separated list of recipients
-                // const bodyHtml = '<html><body>Your HTML email content</body></html>'; // Optional
-                // // const bodyText = 'Your plain text email content'; // Optional
-                // // const isTransactional = true; // Set to true for transactional email, false for marketing
+                const apiKey = response.data.apiKey
+                // const apiKey = '';
+                const subject = 'Confirmation: Your Message Has Been Received';
+                const from = 'info@accennovate.com';
+                const to = formData.email; // Comma-separated list of recipients
+                const bodyHtml =  `
+                <div style="font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0;">
+                    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px;">
+                        <div style="text-align: center;">
+                            <img src="https://accennovate.com/img/AccennovateLogo.png" alt="Accennovate Logo" style="max-width: 150px; height: auto;">
+                            <h1>Contact Form Submission Confirmation</h1>
+                            <p>Thank you for contacting Accennovate Tech Solutions. We appreciate you taking the time to reach out to us.</p>
+                        </div>
+                        <img src="https://accennovate.com/img/about_img.png" alt="About" style="width: 100%;">
+                        <div style="margin-top: 20px; text-align: center;">
+                            <p>We have received your inquiry and will respond to you as soon as possible. In the meantime, you can find more information about our company and our products and services on our website at <a href="https://accennovate.com/">accennovate.com</a></p>
+                            <p>If you have any further questions, please do not hesitate to <a href="https://accennovate.com/contact">contact us</a></p>
+                        </div>
+                        <div>
+                            <br>
+                            <p>Sincerely,</p>
+                            <p>The Accennovate Team</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <img src="https://accennovate.com/img/AccennovateLogo.png" alt="Accennovate Logo" style="width: 70%; margin: 0 auto;">
+                        </div>
+                        <footer style="text-align: center; color: gray;"><i>Copyright (C) 2023 Accennovate Tech Solutions. All rights reserved.</i></footer>
+                    </div>
+                </div>`; // Optional
+                // const bodyText = 'Your plain text email content'; // Optional
+                // const isTransactional = true; // Set to true for transactional email, false for marketing
 
-                // const apiUrl = 'https://api.elasticemail.com/v2/email/send';
+                const apiUrl = 'https://api.elasticemail.com/v2/email/send';
 
-                // $.ajax({
-                //     url: apiUrl,
-                //     type: 'POST',
-                //     data: {
-                //         apikey: apiKey,
-                //         subject: subject,
-                //         from: from,
-                //         to: to, // Comma-separated list of recipients
-                //         bodyHtml: bodyHtml, // Optional
-                //         // bodyText: bodyText, // Optional
-                //         isTransactional: true, // Set to true for transactional email, false for marketing
-                //     },
-                //     dataType: 'json',
-                //     success: function (response) {
-                //         console.log('Email sent successfully:', response);
-                //         // Handle the success response here
-                //     },
-                //     error: function (response) {
-                //         console.log('Error sending email:', response);
-                //         // Handle the error response here
-                //     }
-                // });
-                form.reset(); // Reset the form
-                document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
+                $.ajax({
+                    url: apiUrl,
+                    type: 'POST',
+                    data: {
+                        apikey: apiKey,
+                        subject: subject,
+                        from: from,
+                        to: to, // Comma-separated list of recipients
+                        bodyHtml: bodyHtml, // Optional
+                        // bodyText: bodyText, // Optional
+                        isTransactional: true, // Set to true for transactional email, false for marketing
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log('Email sent successfully:', response);
+                        form.reset(); // Reset the form
+                        document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
+                        // Handle the success response here
+                    },
+                    error: function (response) {
+                        console.log('Error sending email:', response);
+                        form.reset(); // Reset the form
+                        document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
+                        // Handle the error response here
+                    }
+                });
+                // form.reset(); // Reset the form
+                // document.location.replace('/u23eyey-u9lRtKw-eKpA3G-e283ye-gyt45yt-vzN7jP2-QtVtRb-g8u#thankyou');
             }
           },
           error: function (response) {

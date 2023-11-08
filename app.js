@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 require("./db/conn");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+require('dotenv').config();
 var app = express();
 
 // Fetch data from the request  
