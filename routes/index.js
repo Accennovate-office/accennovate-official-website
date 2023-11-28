@@ -30,9 +30,16 @@ router.get('/service', function(req, res, next) {
   res.render('service');
 });
 
+// Service 1 - testing
 router.get('/facebook', function(req, res, next) {
   res.render('facebook_service_page');
-});
+}); 
+
+// Service 2 - testing
+router.get('/Google_Business_Growth_Partner', function(req, res, next) {
+  res.render('Google_Business_Growth_Partner');
+}); 
+
 
 // POST route for form submission
 router.post('/contact', async (req, res) => {
