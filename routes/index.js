@@ -17,10 +17,11 @@ router.get('/', function(req, res, next) {
   res.render('new', { title: 'Express' });
 });
 
-router.get('/new', function(req, res, next) {
-  // console.log(apiKey, apiUrl);
-  res.render('index', { title: 'Express' });
-});
+// Forgot password testing
+// router.get('/new', function(req, res, next) {
+//   // console.log(apiKey, apiUrl);
+//   res.render('index', { title: 'Express' });
+// });
 
 router.get('/contact', function(req, res, next) {
   res.render('contact');
@@ -31,13 +32,18 @@ router.get('/service', function(req, res, next) {
 });
 
 // Service 1 - testing
-router.get('/facebook', function(req, res, next) {
-  res.render('facebook_service_page');
+router.get('/Facebook_Ads_Mastery', function(req, res, next) {
+  res.render('Facebook_Ads_Mastery');
 }); 
 
 // Service 2 - testing
 router.get('/Google_Business_Growth_Partner', function(req, res, next) {
   res.render('Google_Business_Growth_Partner');
+}); 
+
+// Service 3 - testing
+router.get('/Meta_Platform_Transformation', function(req, res, next) {
+  res.render('Meta_Platform_Transformation');
 }); 
 
 
