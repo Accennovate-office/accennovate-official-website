@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const Enquiry = require("../models/enquiry");
 require('dotenv').config();
 const axios = require('axios');
+const Service = require('../models/service');
+const Feature = require('../models/feature');
 
 const apiKey = process.env.MAIL_API; // Replace with your environment variable name
 const apiUrl = 'https://api.elasticemail.com/v2/email/send';
@@ -27,24 +29,51 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
-router.get('/service', function(req, res, next) {
+router.get('/services', function(req, res, next) {
   res.render('service');
 });
 
-// Service 1 - testing
-router.get('/Facebook_Ads_Mastery', function(req, res, next) {
-  res.render('Facebook_Ads_Mastery');
-}); 
+// router.get('/services/:name', function(req, res, next) {
+//   const page = req.params.name
+//   console.log(page);
+//   res.render(page);
+// });
 
-// Service 2 - testing
-router.get('/Google_Business_Growth_Partner', function(req, res, next) {
-  res.render('Google_Business_Growth_Partner');
-}); 
+router.get('/:name', async function(req, res, next) {
+  const page = req.params.name;
+  console.log(page);
+  try {
+    // Fetch service data based on the name parameter
+    const service = await Service.findOne({ slug: page }).populate('features');
+    console.log(service);
+    if (!service) {
+      // Handle case when the service is not found
+      return res.status(404).render('error', { message: 'Service not found' });
+    }
 
-// Service 3 - testing
-router.get('/Meta_Platform_Transformation', function(req, res, next) {
-  res.render('Meta_Platform_Transformation');
-}); 
+    // Render the EJS template with the service data
+    res.render('test_template', { service });
+  } catch (error) {
+    // Handle any errors that occur during the database query
+    console.error(error);
+    res.status(500).render('error', { message: 'Internal Server Error' });
+  }
+});
+
+// // Service 1 - testing
+// router.get('/Facebook_Ads_Mastery', function(req, res, next) {
+//   res.render('Facebook_Ads_Mastery');
+// }); 
+
+// // Service 2 - testing
+// router.get('/Google_Business_Growth_Partner', function(req, res, next) {
+//   res.render('Google_Business_Growth_Partner');
+// }); 
+
+// // Service 3 - testing
+// router.get('/Meta_Platform_Transformation', function(req, res, next) {
+//   res.render('Meta_Platform_Transformation');
+// }); 
 
 
 // POST route for form submission
