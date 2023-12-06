@@ -283,16 +283,78 @@ async function cleanAndPushData() {
                         title: 'Facebook Page Setup',
                         benefits: [
                             'Connect with a massive global audience', 
-                            'Encourage positive reviews and address negative ones to build trust'
+                            'Establish a professional and engaging Facebook presence'
                         ],
-                        howWeDoIt: '',
+                        howWeDoIt: 'We\'ll set up your Facebook Page, customize it with your branding, and configure essential settings to get you started',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: 'Instagram Page Setup',
+                        benefits: [
+                            'Leverage the power of visual storytelling',
+                            'Showcase your products or services through captivating visuals'
+                        ],
+                        howWeDoIt: 'We\'ll create and optimize your Instagram business profile, ensuring it aligns with your brand\'s image and goals',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: 'LinkedIn Page Setup',
+                        benefits: [
+                            'Build professional connections and B2B relationships', 
+                            'Establish a strong presence in the business community'
+                        ],
+                        howWeDoIt: 'We\'ll set up your LinkedIn Company Page, populate it with relevant content, and ensure it reflects your business\'s professionalism',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: 'WhatsApp Business Setup',
+                        benefits: [
+                            'Enhance customer communication and support', 
+                            'Provide convenient and instant interaction with your audience'
+                        ],
+                        howWeDoIt: 'We\'ll configure your WhatsApp Business account, set up automated responses, and integrate it seamlessly with your online presence',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: 'We kickstart your online journey by understanding your brand, target audience, and online goals. Our team will create and optimize profiles on each platform, ensuring a cohesive and professional image.',
+                whyChooseUs: [
+                    'Expand your online reach across multiple platforms',
+                    'Leverage our expertise in social media setup and optimization',
+                    'Start engaging with your audience more effectively from day one',
+                    'Receive guidance on best practices for each platform',
+                ],
+                pricing: 'Our pricing is adaptable to your specific needs and goals. Whether you\'re a small business looking to establish a digital footprint or a larger enterprise seeking to enhance your online presence, we have a tailored plan for you',
+                readyTitle: 'Ready to Elevate Your Online Presence?',
+                readyDescription: 'Don\'t miss out on the opportunities that a strong online presence can bring. Let us set up and optimize your profiles on Google Business, Facebook, Instagram, LinkedIn, and WhatsApp Business, so you can start connecting with your audience on multiple fronts while focusing on your business\'s growth',
+            },
+            {   // Service 6 - 2 features
+                name: 'Festival Visual Package',
+                description: 'Elevate your brand\'s presence during festivals with our Festival Visual Package. We provide a comprehensive solution, offering you a year\'s worth of festival-themed graphics and images for all 66 major festivals in India. Make a lasting impression and engage with your audience on these special occasions',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: 'Year-Long Festival Graphics',
+                        benefits: [
+                            'Maintain a consistent and festive brand image', 
+                            'Stand out and connect with your audience during all major festivals'
+                        ],
+                        howWeDoIt: 'Our talented design team will create visually appealing festival graphics that align with your brand\'s identity, ensuring your presence remains vibrant and relevant throughout the year',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: 'Festival Images a Day Before',
+                        benefits: [
+                            'Stay prepared for every festival in advance', 
+                            'Be timely and relevant by sharing festival images a day before each event'
+                        ],
+                        howWeDoIt: 'We\'ll provide you with high-quality festival images a day before each major festival, enabling you to schedule and share them seamlessly with your audience',
                     },
                     {
                         iconClass: 'fa fa-3x fa-copyright',
                         title: '',
                         benefits: [
-                            'Craft and post engaging content (photos, updates, offers) regularly', 
-                            'Showcase your business\'s personality and unique selling points'
+                            '',
+                            ''
                         ],
                         howWeDoIt: '',
                     },
@@ -300,8 +362,8 @@ async function cleanAndPushData() {
                         iconClass: 'fa fa-3x fa-industry',
                         title: '',
                         benefits: [
-                            'Monitor your Google Business Profile\'s performance', 
-                            'Analyze key metrics such as views, clicks, calls, and direction requests'
+                            '', 
+                            ''
                         ],
                         howWeDoIt: '',
                     },
@@ -309,8 +371,132 @@ async function cleanAndPushData() {
                         iconClass: 'fa fa-3x fa-check',
                         title: '',
                         benefits: [
-                            'Create and manage location-based Google Ads campaigns to reach potential customers', 
-                            'Optimize ad spend for maximum ROI'
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: 'We start by understanding your brand\'s values and messaging. Then, we align our festival visuals with your brand identity to ensure consistency and appeal. Our goal is to help you maintain a festive and engaging presence year-round',
+                whyChooseUs: [
+                    'Access a year\'s worth of festival visuals in one package',
+                    'Save time and effort by preparing for festivals in advance',
+                    'Enjoy high-quality and professionally designed festival graphics',
+                    'Maintain a festive and relevant brand image',
+                ],
+                pricing: 'Our pricing is flexible and tailored to your specific needs. Whether you\'re a business looking to create a strong festival presence or an organization aiming to connect with your audience during Indian festivals, we have the right package for you',
+                readyTitle: 'Ready to Transform Your Festival Presence?',
+                readyDescription: 'Don\'t miss the opportunity to engage with your audience during India\'s 66 major festivals. Let us provide you with a year\'s worth of festival-themed graphics and images, allowing you to make a lasting impact and celebrate each festival with your audience in style',
+            },
+            {   // Service 7
+                name: 'Video Content Mastery',
+                description: 'Revolutionize your online presence with our Video Content Mastery service. We specialize in creating and optimizing compelling video content to help you engage your audience, enhance brand recognition, and achieve your marketing objectives effectively',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: 'Strategic Video Creation',
+                        benefits: [
+                            'Reach and captivate your target audience through dynamic video content', 
+                            'Drive increased engagement and conversions',
+                        ],
+                        howWeDoIt: 'Our skilled video production team will craft tailored video content aligned with your business goals. We\'ll identify the right themes, styles, and platforms to ensure your videos resonate with your intended viewers',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: 'Budget Optimization',
+                        benefits: [
+                            'Make the most of your video production budget for optimal results', 
+                            'Maximize ROI by strategically allocating your resources'
+                        ],
+                        howWeDoIt: 'We\'ll manage your video production budget meticulously, ensuring that every aspect of video creation is cost-effective and delivers the desired outcomes',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: 'Creative Storytelling and Editing',
+                        benefits: [
+                            'Capture the imagination of your audience with engaging storytelling',
+                            'Improve viewer retention and boost conversion rates'
+                        ],
+                        howWeDoIt: 'Our creative team will develop captivating video concepts and edit videos with finesse. We\'ll ensure that your video content not only looks visually stunning but also conveys a compelling narrative',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: 'Performance Tracking and Optimization',
+                        benefits: [
+                            'Stay informed about how your videos are performing', 
+                            'Continuously enhance your video strategies for better results'
+                        ],
+                        howWeDoIt: 'We\'ll monitor the performance of your video content, tracking metrics such as views, engagement, and conversion rates. We\'ll use this data to refine your video strategies for maximum impact',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: 'A/B Testing (Optional)',
+                        benefits: [
+                            'Discover what resonates best with your audience through experimentation', 
+                            'Optimize your video content and strategies for superior results'
+                        ],
+                        howWeDoIt: 'If you choose, we can conduct A/B tests to compare different video elements and strategies, ensuring your video content always delivers exceptional results',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: 'We begin by comprehending your brand, target audience, and marketing goals. Then, we craft a tailored video content strategy that aligns with your objectives and resources. Our experienced team will continuously assess and enhance your video content to deliver the finest results',
+                whyChooseUs: [
+                    'Maximize the impact of your online presence through compelling video content',
+                    'Tap into our expertise in video production and digital marketing',
+                    'Receive detailed reports on your video content\'s performance',
+                    'Get dedicated support to answer your questions and address concerns promptly',
+                ],
+                pricing: 'Our pricing is adaptable and customized to your video content goals. Whether you require a single video or an ongoing video content strategy, we have the right plan for you',
+                readyTitle: 'Ready to Transform Your Video Content?',
+                readyDescription: 'Don\'t miss out on the power of engaging video content. Let us manage your video production and optimization to enhance your online presence, increase engagement, and achieve your marketing goals while you focus on business growth',
+            },
+            {   // Service 8
+                name: 'Webinar and Streaming Excellence',
+                description: '',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: '',
+                        benefits: [
+                            '', 
+                            '',
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: '',
+                        benefits: [
+                            '',
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
                         ],
                         howWeDoIt: '',
                     },
@@ -318,10 +504,196 @@ async function cleanAndPushData() {
                 ],
                 approach: '',
                 whyChooseUs: [
-                    'Proven track record of improving online visibility and driving foot traffic',
-                    'Expertise in local SEO and Google\'s algorithms',
-                    'Transparent reporting to track progress',
-                    'Dedicated support to address your questions and concerns',
+                    '',
+                    '',
+                    '',
+                    '',
+                ],
+                pricing: '',
+                readyTitle: '',
+                readyDescription: '',
+            },
+            {   // Service 9
+                name: '',
+                description: '',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: '',
+                        benefits: [
+                            '', 
+                            '',
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: '',
+                        benefits: [
+                            '',
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: '',
+                whyChooseUs: [
+                    '',
+                    '',
+                    '',
+                    '',
+                ],
+                pricing: '',
+                readyTitle: '',
+                readyDescription: '',
+            },
+            {   // Service 10
+                name: '',
+                description: '',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: '',
+                        benefits: [
+                            '', 
+                            '',
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: '',
+                        benefits: [
+                            '',
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: '',
+                whyChooseUs: [
+                    '',
+                    '',
+                    '',
+                    '',
+                ],
+                pricing: '',
+                readyTitle: '',
+                readyDescription: '',
+            },
+            {   // Service 11
+                name: '',
+                description: '',
+                features: [
+                    {
+                        iconClass: 'fa fa-bullhorn fa-3x',
+                        title: '',
+                        benefits: [
+                            '', 
+                            '',
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-braille',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-copyright',
+                        title: '',
+                        benefits: [
+                            '',
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-industry',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    {
+                        iconClass: 'fa fa-3x fa-check',
+                        title: '',
+                        benefits: [
+                            '', 
+                            ''
+                        ],
+                        howWeDoIt: '',
+                    },
+                    // Add more feature objects as needed
+                ],
+                approach: '',
+                whyChooseUs: [
+                    '',
+                    '',
+                    '',
+                    '',
                 ],
                 pricing: '',
                 readyTitle: '',
