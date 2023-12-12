@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 const serviceSchema = new mongoose.Schema({
     name: { type: String, unique: true, required: true },
     slug: { type: String, unique: true, required: true },
-    shortName: { type: String, unique: true, required: true },
+    shortName: { type: String, required: true },
     description: String,
     features: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Feature' }], // howWeCanHelp section
     approach: String,

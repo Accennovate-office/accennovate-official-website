@@ -46,6 +46,7 @@ router.get('/:name', async function(req, res, next) {
     // Fetch service data based on the name parameter
     const service = await Service.findOne({ slug: page }).populate('features');
     console.log(service);
+    console.log(service.shortName);
     if (!service) {
       // Handle case when the service is not found
       return res.status(404).render('error', { message: 'Service not found' });
